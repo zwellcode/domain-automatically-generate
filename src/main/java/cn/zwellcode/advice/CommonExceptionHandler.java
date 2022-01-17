@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * 统一异常处理
  * 处理api中异常
  * controller加强类
+ * @author HM
  */
 @ControllerAdvice
 public class CommonExceptionHandler {

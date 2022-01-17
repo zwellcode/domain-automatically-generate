@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  *表实体
+ * @author HM
  */
 @ToString
 public class Table {

@@ -16,18 +16,21 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * @author HM
+ */
 @Controller
 @RequestMapping("/code")
 public class CodeBuilderController {
-    @RequestMapping("/codebuilder")
+    @RequestMapping("/codeBuilder")
     @ResponseBody
-    public Object codebuilder(ParseVO vo){
+    public Object codeBuilder(ParseVO vo) {
         File file = new File(vo.getOutputPath());
-        if(!file.exists()){
-            return Result.error("模板输出路径："+vo.getOutputPath()+"不存在~");
+        if (!file.exists()) {
+            return Result.error("模板输出路径：" + vo.getOutputPath() + "不存在~");
         }
-        if(file.isFile()){
-            return Result.error("模板输出路径："+vo.getOutputPath()+"必须是一个目录");
+        if (file.isFile()) {
+            return Result.error("模板输出路径：" + vo.getOutputPath() + "必须是一个目录");
         }
         String[] comments = vo.getComments();
         String[] domains = vo.getDomains();
@@ -41,9 +44,9 @@ public class CodeBuilderController {
         return Result.success(list);
     }
 
-    @RequestMapping("/domainbuilder")
+    @RequestMapping("/domainBuilder")
     @ResponseBody
-    public Object codebuilder(DomainVO vo){
+    public Object codeBuilder(DomainVO vo) {
         String msg = null;
         try {
             try {
@@ -62,7 +65,7 @@ public class CodeBuilderController {
             e.printStackTrace();
             return Result.error("你的存储路径有问题或模板找不到，请不要带中文，请核实");
         }
-        return Result.success(msg+"------已贴mp的注解~");
+        return Result.success(msg + "------已贴mp的注解~");
     }
 
 }
