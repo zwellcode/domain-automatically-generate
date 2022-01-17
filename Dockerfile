@@ -4,4 +4,4 @@ WORKDIR /home
 
 COPY target/*.jar /home
 
-ENTRYPOINT java -jar *.jar
+ENTRYPOINT java -jar /home/*.jar
