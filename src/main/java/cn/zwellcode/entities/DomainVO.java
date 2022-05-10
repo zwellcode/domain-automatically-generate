@@ -11,10 +11,10 @@ import lombok.ToString;
 @Setter
 @ToString
 public class DomainVO {
-    private String url;
-    private String driver;
-    private String user;
-    private String password;
+    private String url = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8";
+    private String driver = "com.mysql.cj.jdbc.Driver";
+    private String user = "root";
+    private String password = "zhouziwei";
     private String packageName;
     private String path;
     private String tableName;
